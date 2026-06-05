@@ -53,7 +53,7 @@ export default function CurrentlyLearning() {
 
               <div className="border-l-4 border-[var(--accent-orange)] pl-4 mb-4">
                 <p className="text-sm font-semibold text-[var(--accent-orange)] mb-1">
-                  Why I'm Learning This
+                  {"Why I'm Learning This"}
                 </p>
                 <p className="text-sm text-[var(--foreground-secondary)] italic">
                   {item.why}

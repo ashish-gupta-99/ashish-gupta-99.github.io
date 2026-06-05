@@ -3,7 +3,7 @@ export interface Project {
   title: string;
   description: string;
   techStack: string[];
-  category: "featured" | "diy";
+  category: "featured" | "independent";
   imageUrl?: string;
   liveUrl?: string;
   githubUrl?: string;
@@ -13,76 +13,95 @@ export interface Project {
 export const PROJECTS: Project[] = [
   // Featured Projects
   {
-    title: "Intelligent IoT Monitoring System",
-    description: "Real-time sensor data collection and analysis platform with ML-powered anomaly detection",
-    techStack: ["Python", "TensorFlow", "MQTT", "React", "TimescaleDB"],
+    title: "Automated Enterprise Deployment Pipeline",
+    description: "Engineered an end-to-end orchestration framework using Ansible to automate deployment of Java applications in single and multi-node clusters.",
+    techStack: ["Ansible", "Nginx", "Cassandra", "Java", "Python", "Pytest", "SSL/TLS", "GitHub Copilot"],
     category: "featured",
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/yourusername/project",
     highlights: [
-      "Reduced false alerts by 75% using LSTM networks",
-      "Processing 1M+ sensor readings per day",
-      "Real-time dashboard with sub-second latency",
-    ],
+      "Automated Nginx setup, Cassandra DB configurations, and HTTPS security via SSL certificates.",
+      "Implemented automated component and deployment testing using Python Pytest.",
+      "Optimized security compliance and deployment times across distributed Linux servers."
+    ]
   },
   {
-    title: "AI-Powered Code Review Assistant",
-    description: "LLM-based tool for automated code review with security vulnerability detection",
-    techStack: ["GPT-4", "Python", "FastAPI", "React", "Docker"],
+    title: "Julius Baer Portfolio Management System",
+    description: "Led the performance migration and feature integration of a high-throughput bank portfolio dashboard.",
+    techStack: ["React.js", "TypeScript", "Rust (Axum)", "C++", "Hugging Face (Gemma)", "Vue.js", "MySQL", "Webpack"],
     category: "featured",
-    githubUrl: "https://github.com/yourusername/project",
     highlights: [
-      "Identifies 85% of common security issues",
-      "Integrates with GitHub Actions",
-      "Supports 10+ programming languages",
-    ],
+      "Migrated resource-intensive Vue components to React & TypeScript following performance best practices.",
+      "Re-engineered legacy C#/.NET backend services into high-performance Rust and C++ native engines.",
+      "Integrated local Gemma-3 SLMs for AI customer support with safety boundaries and exception handling."
+    ]
   },
   {
-    title: "Smart Home Automation Hub",
-    description: "Centralized control system for IoT devices with voice command integration",
-    techStack: ["ESP32", "Node.js", "WebSockets", "Flutter", "SQLite"],
+    title: "Medicard AI Support & RAG Modules",
+    description: "Built a production RAG (Retrieval-Augmented Generation) pipeline for a secure customer support chatbot.",
+    techStack: ["Python", "Vector DBs", "RAG Frameworks", "Flutter", "Dart", "GitHub SpecKit", "Copilot"],
     category: "featured",
     highlights: [
-      "Controls 20+ smart devices simultaneously",
-      "Voice recognition with 95% accuracy",
-      "Energy consumption reduced by 30%",
-    ],
+      "Optimized agent memory, vector similarity search, and context retention for medical support queries.",
+      "Developed task-delegation agentic modules to assist users dynamically.",
+      "Created new Flutter modules for the MediGo mobile app under Spec-Driven Development."
+    ]
+  },
+  {
+    title: "Tech Agriculture Plant Diagnostic System",
+    description: "An AI-powered agricultural monitoring and plant diagnostics workflow deployed end-to-end on GCP.",
+    techStack: ["Python", "TensorFlow (ResNet50)", "PyTorch", "Multi-Agent Frameworks", "Llama-2", "FastAPI", "GCP"],
+    category: "featured",
+    highlights: [
+      "Architected multi-agent reasoning workflows utilizing fine-tuned Llama-2 models.",
+      "Implemented planning, execution, and reflection loops (ReAct pattern) to generate diagnostic remedies.",
+      "Served lightweight edge inference and computer vision pipelines to analyze plant leaves."
+    ]
+  },
+  {
+    title: "Selec IoT Inventory & Energy Monitor",
+    description: "Full-scale energy monitoring and hardware asset management system governing industrial sensor networks.",
+    techStack: ["AWS IoT Core", "ESP32", "Arduino C++", "FreeRTOS", "React.js", "Node.js", "GraphQL", "MongoDB", "Modbus"],
+    category: "featured",
+    highlights: [
+      "Developed real-time firmware governed by FreeRTOS on ESP32 microcontrollers for sensor polling.",
+      "Constructed GraphQL endpoints to handle analytics from Modbus industrial telemetry streams.",
+      "Implemented robust device-to-cloud streams via AWS IoT Core MQTT brokers."
+    ]
+  },
+  {
+    title: "Penrose Systems multiplayer Match Game",
+    description: "A real-time, event-driven multiplayer game featuring fast-match mechanics and smooth animations.",
+    techStack: ["Node.js", "NestJS", "Socket.IO", "Redis", "PixiJS", "Vue.js", "MongoDB", "GCP"],
+    category: "featured",
+    highlights: [
+      "Designed high-throughput event architecture for sub-100ms multiplayer state synchronization.",
+      "Built matchmaking queue systems powered by Redis key-value storage.",
+      "Managed developer team to ship gameplay using PixiJS and Vue layouts."
+    ]
   },
 
-  // DIY Projects
+  // Independent Projects (Built outside of corporate roles)
   {
-    title: "Gesture-Controlled Robot Arm",
-    description: "6-DOF robotic arm controlled via computer vision and hand gesture recognition",
-    techStack: ["OpenCV", "MediaPipe", "Arduino", "Python"],
-    category: "diy",
+    title: "Pawfriend - Pet Identity System",
+    description: "An IoT animal identification and QR synchronization platform helping track and care for street animals.",
+    techStack: ["ESP32", "Python", "React.js", "GCP", "Firebase", "QR Sync"],
+    category: "independent",
     highlights: [
-      "Real-time gesture tracking with 60fps",
-      "Custom-designed 3D printed components",
-      "Precision control within 2mm tolerance",
-    ],
+      "Featured in national news media for social impact and hardware integration.",
+      "Developed ESP32 QR sync modules linked to cloud-native React dashboards.",
+      "Provided a secure, scalable animal tracking system on Firebase and GCP."
+    ]
   },
   {
-    title: "Plant Health Monitor",
-    description: "IoT sensor system that monitors soil moisture, temperature, and light levels with automated watering",
-    techStack: ["Raspberry Pi", "Arduino", "Python", "MQTT"],
-    category: "diy",
+    title: "Raspberry Pi Live Stream & Edge Object Detection",
+    description: "High-frame-rate edge video streaming platform with on-device computer vision and object classification.",
+    techStack: ["OpenCV", "Python", "Yocto Project", "TensorFlow Lite", "Raspberry Pi"],
+    category: "independent",
     highlights: [
-      "Automated watering based on soil moisture",
-      "Mobile notifications via Telegram bot",
-      "Solar-powered for outdoor use",
-    ],
-  },
-  {
-    title: "AI Chatbot for Personal Knowledge Base",
-    description: "RAG-based chatbot that answers questions from personal notes and documents",
-    techStack: ["LangChain", "ChromaDB", "FastAPI", "React"],
-    category: "diy",
-    highlights: [
-      "Processes 1000+ personal documents",
-      "Context-aware responses using embeddings",
-      "Privacy-first, runs locally",
-    ],
-  },
+      "Developed a custom, minimal Linux OS build for Raspberry Pi using the Yocto Project.",
+      "Deployed optimized TensorFlow Lite models for lightweight, sub-50ms edge inference.",
+      "Configured camera drivers and live streaming scripts via OpenCV."
+    ]
+  }
 ];
 
 interface ProjectCardProps {
@@ -159,10 +178,10 @@ function ProjectCard({ project }: ProjectCardProps) {
 
 export default function ProjectsSection() {
   const featuredProjects = PROJECTS.filter((p) => p.category === "featured");
-  const diyProjects = PROJECTS.filter((p) => p.category === "diy");
+  const independentProjects = PROJECTS.filter((p) => p.category === "independent");
 
   return (
-    <section id="projects" className="relative py-24 px-6 bg-(--background-secondary)">
+    <section id="projects" className="relative py-12 px-6">
       <div className="container mx-auto max-w-6xl">
         {/* Featured Projects */}
         <div className="mb-20">
@@ -173,25 +192,29 @@ export default function ProjectsSection() {
             Professional and impactful solutions demonstrating technical expertise
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {featuredProjects.map((project, idx) => (
-              <ProjectCard key={idx} project={project} />
+              <div key={idx} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-md flex flex-col">
+                <ProjectCard project={project} />
+              </div>
             ))}
           </div>
         </div>
 
-        {/* DIY Projects */}
+        {/* Independent Projects */}
         <div>
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 gradient-text">
-            DIY Projects
+            Independent Projects
           </h2>
           <p className="text-center text-(--foreground-secondary) mb-12 max-w-2xl mx-auto">
-            Personal experiments and creative technical explorations
+            Projects built outside my corporate roles, focusing on independent initiatives, hardware prototyping, and edge software integrations.
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {diyProjects.map((project, idx) => (
-              <ProjectCard key={idx} project={project} />
+          <div className="flex flex-wrap justify-center gap-6">
+            {independentProjects.map((project, idx) => (
+              <div key={idx} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-md flex flex-col">
+                <ProjectCard project={project} />
+              </div>
             ))}
           </div>
         </div>

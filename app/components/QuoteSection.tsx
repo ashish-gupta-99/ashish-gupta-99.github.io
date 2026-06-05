@@ -7,7 +7,7 @@ const QUOTE = {
 
 export default function QuoteSection() {
   return (
-    <section className="relative py-24 px-6 bg-(--background-secondary)">
+    <section className="relative py-12 px-6">
       <div className="container mx-auto max-w-4xl">
         <div className="glass-effect p-12 md:p-16 rounded-2xl text-center border-2 border-(--border-color)">
           <svg
@@ -23,7 +23,7 @@ export default function QuoteSection() {
           </blockquote>
 
           <div className="text-lg text-(--foreground-secondary)">
-            <p className="font-semibold gradient-text">— {QUOTE.author}</p>
+            <p className="font-semibold gradient-text">- {QUOTE.author}</p>
             <p className="text-sm mt-1">{QUOTE.context}</p>
           </div>
         </div>
