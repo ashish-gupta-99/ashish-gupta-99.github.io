@@ -1,0 +1,58 @@
+name: Deploy Next.js to GitHub Pages
+
+on:
+  push:
+    branches: ["master"]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: ${{ hashFiles('package-lock.json') != '' && 'npm' || hashFiles('yarn.lock') != '' && 'yarn' || 'pnpm' }}
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then npm ci;
+          elif [ -f yarn.lock ]; then yarn install --frozen-lockfile;
+          elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm install --frozen-lockfile;
+          else npm install;
+          fi
+
+      - name: Build with Next.js
+        run: |
+          if [ -f package-lock.json ]; then npm run build;
+          elif [ -f yarn.lock ]; then yarn build;
+          elif [ -f pnpm-lock.yaml ]; then pnpm build;
+          else npm run build;
+          fi
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Log deployed URL
+        run: |
+          echo "Deployed URL: ${{ steps.deployment.outputs.page_url }}"
+          echo "Deployment Successful!" >> $GITHUB_STEP_SUMMARY
+          echo "Your Next.js portfolio is live at: [${{ steps.deployment.outputs.page_url }}](${{ steps.deployment.outputs.page_url }})" >> $GITHUB_STEP_SUMMARY
