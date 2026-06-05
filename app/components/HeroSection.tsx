@@ -14,7 +14,7 @@ export default function HeroSection() {
           <div className="flex justify-center mb-8">
             <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-[var(--accent-orange)] shadow-lg shadow-[var(--accent-orange)]/30">
               <Image
-                src="/next.svg"
+                src="/my_pic.png"
                 alt="Ashish Gupta"
                 fill
                 className="object-cover"
@@ -25,26 +25,27 @@ export default function HeroSection() {
 
           {/* Name & Tagline */}
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl font-bold text-[var(--foreground)]">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-[var(--foreground)]">
               Ashish Gupta
             </h1>
-            <p className="text-xl md:text-2xl gradient-text font-semibold">
-              Deep-Tech Software Engineer | AI, IoT & Embedded Systems
+            <p className="text-lg sm:text-xl md:text-2xl gradient-text font-semibold">
+              High-Impact Technical Partner & Senior AI/ML & Embedded Engineer
             </p>
           </div>
 
           {/* Introduction */}
-          <p className="text-lg md:text-xl text-[var(--foreground-secondary)] max-w-2xl mx-auto leading-relaxed">
-            Passionate about pushing the boundaries of technology through AI/ML, embedded systems, 
-            and full-stack development. Building innovative solutions at the intersection of hardware 
-            and software with a focus on deep tech applications.
+          <p className="text-base sm:text-lg md:text-xl text-[var(--foreground-secondary)] max-w-2xl mx-auto leading-relaxed">
+            I am an engineer with over 5.5 years of experience building autonomous systems, 
+            multi-agent workflows, and scalable full-stack solutions. I specialize in bridging 
+            the gap between intelligent software and robust hardware, developing edge AI, custom 
+            firmware, and cloud-native systems that solve real-world problems.
           </p>
 
           {/* CTA Button */}
           <div className="pt-6">
             <button
               onClick={() => setShowCV(true)}
-              className="px-8 py-4 bg-[var(--accent-orange)] text-white font-semibold rounded-full hover:bg-[var(--accent-orange-light)] transition-all transform hover:scale-105 shadow-lg hover:shadow-xl hover:shadow-[var(--accent-orange)]/50"
+              className="px-5 py-3 text-sm sm:px-8 sm:py-4 sm:text-base bg-[var(--accent-orange)] text-white font-semibold rounded-full hover:bg-[var(--accent-orange-light)] transition-all transform hover:scale-105 shadow-lg hover:shadow-xl hover:shadow-[var(--accent-orange)]/50 cursor-pointer"
             >
               View My CV
             </button>
@@ -70,7 +71,7 @@ export default function HeroSection() {
             {/* PDF Viewer */}
             <div className="w-full h-full overflow-auto p-4">
               <iframe
-                src="/new-ashish-gupta-cvi.pdf"
+                src="/ashish-gupta-cv.pdf"
                 className="w-full h-full border-0 rounded"
                 title="Ashish Gupta CV"
               />

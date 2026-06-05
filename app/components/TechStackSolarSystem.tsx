@@ -14,51 +14,59 @@ export interface SkillCategory {
 
 export const TECH_STACK: SkillCategory[] = [
   {
+    title: "Programming Languages",
+    color: "#a855f7",
+    subSkills: [
+      { name: "C/C++" },
+      { name: "Rust" },
+      { name: "Python" },
+      { name: "JavaScript/TypeScript" },
+      { name: "Golang" },
+      { name: "C#/.NET" },
+      { name: "Java" },
+      { name: "Shell Scripting" },
+    ],
+  },
+  {
     title: "AI & Machine Learning",
     color: "#ff6b35",
     subSkills: [
-      { name: "PyTorch" },
-      { name: "TensorFlow" },
-      { name: "LLMs" },
-      { name: "Transformers" },
+      { name: "TensorFlow & PyTorch" },
+      { name: "RAG Pipelines" },
+      { name: "Llama & Gemma LLMs" },
       { name: "Hugging Face" },
-      { name: "OpenCV" },
+      { name: "LangChain" },
+      { name: "OpenCV / Vision" },
+      { name: "Deep Learning & NLP" },
+      { name: "TensorRT Optimization" },
     ],
   },
   {
-    title: "IoT & Embedded Systems",
+    title: "Embedded & Edge Systems",
     color: "#00d4ff",
     subSkills: [
-      { name: "Arduino" },
-      { name: "Raspberry Pi" },
-      { name: "ESP32" },
-      { name: "MQTT" },
-      { name: "Sensors" },
-      { name: "Microcontrollers" },
+      { name: "ESP32 (Arduino) / Bluetooth" },
+      { name: "FreeRTOS RTOS" },
+      { name: "Yocto Project Builder" },
+      { name: "Embedded Linux" },
+      { name: "Raspberry Pi & Drivers" },
+      { name: "IoT Protocols & MQTT" },
+      { name: "HIL Controls" },
+      { name: "Modbus Telemetry" },
     ],
   },
   {
-    title: "Full Stack Development",
-    color: "#61dafb",
+    title: "Cloud, DevOps & Databases",
+    color: "#10b981",
     subSkills: [
-      { name: "React" },
-      { name: "Next.js" },
-      { name: "TypeScript" },
-      { name: "Tailwind CSS" },
-      { name: "HTML/CSS" },
-      { name: "JavaScript" },
-    ],
-  },
-  {
-    title: "Backend & Databases",
-    color: "#47a248",
-    subSkills: [
-      { name: "Python" },
-      { name: "Node.js" },
-      { name: "PostgreSQL" },
-      { name: "MongoDB" },
-      { name: "FastAPI" },
-      { name: "REST APIs" },
+      { name: "AWS & GCP Cloud" },
+      { name: "Docker & Containerization" },
+      { name: "CI/CD & Git Actions" },
+      { name: "PostgreSQL & MySQL" },
+      { name: "MongoDB & Cassandra" },
+      { name: "Linux Server Administration" },
+      { name: "Nginx & SSL/TLS" },
+      { name: "GraphQL & REST APIs" },
     ],
   },
 ];
@@ -67,7 +75,7 @@ export const TECH_STACK: SkillCategory[] = [
 function TechIcon({ color }: { color: string }) {
   return (
     <svg
-      className="w-8 h-8"
+      className="w-4 h-4"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -100,17 +108,17 @@ function SkillCard({ category }: SkillCardProps) {
         </h3>
       </div>
 
-      {/* Sub Skills Grid */}
-      <div className="grid grid-cols-2 gap-4">
+      {/* Sub Skills Flexible Wrap */}
+      <div className="flex flex-wrap gap-2">
         {category.subSkills.map((skill, idx) => (
           <div
             key={idx}
-            className="flex items-center gap-3 p-3 rounded-lg bg-(--background-secondary) hover:bg-(--border-color) transition-all"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[var(--background)]/60 border border-[var(--border-color)] hover:border-accent transition-all"
           >
             <div className="flex-shrink-0">
               <TechIcon color={category.color} />
             </div>
-            <span className="text-sm font-medium text-(--foreground-secondary) group-hover:text-foreground transition-colors">
+            <span className="text-xs sm:text-sm font-medium text-[var(--foreground-secondary)] group-hover:text-foreground transition-colors">
               {skill.name}
             </span>
           </div>
@@ -122,7 +130,7 @@ function SkillCard({ category }: SkillCardProps) {
 
 export default function TechStackSolarSystem() {
   return (
-    <section id="tech-stack" className="relative py-24 px-6">
+    <section id="tech-stack" className="relative py-12 px-6 bg-[var(--background-secondary)]/25 backdrop-blur-sm">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 gradient-text">
           Tech Stack
